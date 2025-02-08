@@ -72,7 +72,19 @@ pipeline {
                   }
              }
          }
-         
+       stage("Trigger ArgoCD Deployment") {
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'argocd-credentials', 
+        passwordVariable: 'ARGO_PASS', usernameVariable: 'ARGO_USER')]) {
+            sh """
+                argocd login 18.215.255.218:30625 --username \${ARGO_USER} --password \${ARGO_PASS} --insecure
+                argocd app sync basic-app
+            """
+        }
+        echo "ArgoCD Deployment Triggered"
+    }
+}
+          
           stage('Stop Running Containers') {
             steps {
                 sh 'docker stop $(docker ps -q) || true'
