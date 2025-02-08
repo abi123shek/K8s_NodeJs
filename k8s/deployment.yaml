@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: abishekchamlagai/basic-app
+  name: basic-app
+  namespace: web-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: basic-app
+  template:
+    metadata:
+      labels:
+        app: basic-app
+    spec:
+      containers:
+      - name: basic-app
+        image: abishekchamlagai/basic-app:latest
+        ports:
+        - containerPort: 80
