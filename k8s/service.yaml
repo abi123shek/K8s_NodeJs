@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: K8s_NodeJs-service
+  name: Kubernetes-nodejs-service
   namespace: web-app  # Ensure this namespace exists
 spec:
   selector:
-    app: K8s_NodeJs  # Ensure this label matches your Deployment
+    app: Kubernetes-nodejs  # Ensure this label matches your Deployment
   ports:
     - protocol: TCP
       port: 80
