@@ -10,5 +10,5 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 8000  # Ensure this is within the valid range (30000-32767)
+      nodePort: 30007  # Ensure this is within the valid range (30000-32767)
   type: NodePort  # Can be "ClusterIP" or "LoadBalancer" if needed
