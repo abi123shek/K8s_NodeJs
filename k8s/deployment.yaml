@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    argocd-image-updater.argoproj.io/image-list: abishekchamlagai/K8s_NodeJs
-  name: K8s_NodeJs
+    argocd-image-updater.argoproj.io/image-list: abishekchamlagai/Kubernetes-nodejs
+  name: Kubernetes-nodejs
   namespace: web-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: K8s_NodeJs
+      app: Kubernetes-nodejs
   template:
     metadata:
       labels:
-        app: K8s_NodeJs 
+        app: Kubernetes-nodejs
     spec:
       containers:
-      - name: K8s_NodeJs
-        image: abishekchamlagai/K8s_NodeJs:latest
+      - name: Kubernetes-nodejs
+        image: abishekchamlagai/Kubernetes-nodejs:latest
         ports:
         - containerPort: 80
