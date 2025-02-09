@@ -2,6 +2,6 @@ version: '3.9'
 
 services:
   web:
-    image: "abishekchamlagai/Kubernetes-nodejs:latest"
+    image: "abishekchamlagai/kubernetes-nodejs:latest"
     ports:
       - "8000:8000"
