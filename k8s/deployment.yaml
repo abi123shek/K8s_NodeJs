@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    argocd-image-updater.argoproj.io/image-list: abishekchamlagai/basic-app
-  name: basic-app
+    argocd-image-updater.argoproj.io/image-list: abishekchamlagai/K8s_NodeJs
+  name: K8s_NodeJs
   namespace: web-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: basic-app
+      app: K8s_NodeJs
   template:
     metadata:
       labels:
-        app: basic-app
+        app: K8s_NodeJs 
     spec:
       containers:
-      - name: basic-app
-        image: abishekchamlagai/basic-app:latest
+      - name: K8s_NodeJs
+        image: abishekchamlagai/K8s_NodeJs:latest
         ports:
         - containerPort: 80
