@@ -12,3 +12,5 @@ spec:
       targetPort: 80
       nodePort: 30007  # Ensure this is within the valid range (30000-32767)
   type: NodePort  # Can be "ClusterIP" or "LoadBalancer" if needed
+
+#user cmd: kubectl apply -f service.yml -n web-app
